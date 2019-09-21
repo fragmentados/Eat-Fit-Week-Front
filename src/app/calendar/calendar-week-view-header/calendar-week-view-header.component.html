@@ -1,0 +1,20 @@
+<div class="cal-day-headers">
+  <div
+    class="cal-header"
+    *ngFor="let day of days; trackBy: trackByWeekDayHeaderDate"
+    [class.cal-past]="day.isPast"
+    [class.cal-today]="day.isToday"
+    [class.cal-future]="day.isFuture"
+    [class.cal-weekend]="day.isWeekend"
+    [ngClass]="day.cssClass"
+  >
+    <b>
+      {{ day.date | calendarDate: 'weekViewColumnHeader':locale }}
+    </b>
+    <br />
+    <span>
+      {{day.date | calendarDate: 'weekViewColumnSubHeader':locale}}
+    </span>
+  </div>
+</div>
+

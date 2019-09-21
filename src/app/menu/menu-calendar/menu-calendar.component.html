@@ -1,0 +1,67 @@
+<div id="menuContainer" (swipeleft)="nextDay($event)" (swiperight)="previousDay($event)">
+  <h2 align="center" *ngIf="isLastPage">{{ 'MENU_CALENDAR.WEEKLY_OVERVIEW' | translate }}</h2>
+  <app-calendar-header *ngIf="!isMobile && !isTablet"
+    [(view)]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="updateMenuWithNewMenu()">
+  </app-calendar-header>
+  <div align="center" *ngIf="!menu">
+    <button (click)="createMenu()"><b>{{ 'MENU_CALENDAR.CREATE_MENU' | translate }}</b></button>
+  </div>
+  <div *ngIf="menu">
+    <app-calendar-week-view *ngIf="mealsInWeek && !isLastPage"
+    [viewDate]="viewDate"
+    [weekStartsOn]=[1]
+    [events]="events"
+    [daysInWeek]="getDaysInWeek()"
+    [menuId]="menu.id"
+    [refresh]="refresh"
+    [mealsInWeek]="mealsInWeek"
+    [locale]="locale"
+    (eventTimesChanged)="eventTimesChanged($event)"
+    (dishAdded)="updateMenuStatsWithDishStats($event)"
+    (eventClicked)="handleClickEvent($event)">
+    </app-calendar-week-view>
+    <br/>
+    <div align="center" *ngIf="!isMobile && !isTablet">
+      <button mat-raised-button id="shoppingListButton" (click)="generateShoppingList()"><b>{{ 'MENU_CALENDAR.SHOPPING_LIST' | translate }}</b></button>
+      <button (click)="clearMenu()"><b>{{ 'MENU_CALENDAR.CLEAR_MENU' | translate }}</b></button>
+      <button (click)="randomMenu()"><b>{{ 'MENU_CALENDAR.RANDOM_MENU' | translate }}</b></button>
+      <button (click)="validMenu()"><b>{{ 'MENU_CALENDAR.VALID_MENU' | translate }}</b></button>
+      <button (click)="saveTemplate()"><b>{{ 'MENU_CALENDAR.SAVE_AS_TEMPLATE' | translate }}</b></button>
+      <button (click)="fillFromTemplate()"><b>{{ 'MENU_CALENDAR.FILL_FROM_TEMPLATE' | translate }}</b></button>
+      <button (click)="printMenu()"><b>{{ 'MENU_CALENDAR.PRINT_MENU' | translate }}</b></button>
+      <button (click)="shareMenu()" *ngIf="currentUser.facebookUserId"><b>{{ 'MENU_CALENDAR.FACEBOOK_SHARE' | translate }}</b></button>
+    </div>
+    <div align="center" *ngIf="isMobile && !isLastPage">
+      <button mat-raised-button (click)="generateDayShoppingList()"><b>{{ 'MENU_CALENDAR.SHOPPING_LIST' | translate }}</b></button>
+      <button (click)="clearDay()"><b>{{ 'MENU_CALENDAR.CLEAR_DAY' | translate }}</b></button>
+      <button (click)="randomDay()"><b>{{ 'MENU_CALENDAR.RANDOM_DAY' | translate }}</b></button>
+      <button (click)="validDay()"><b>{{ 'MENU_CALENDAR.VALID_DAY' | translate }}</b></button>
+    </div>
+    <div align="center" *ngIf="isTablet && !isLastPage">
+        <button mat-raised-button (click)="generateDayRangeShoppingList()"><b>{{ 'MENU_CALENDAR.SHOPPING_LIST' | translate }}</b></button>
+        <button (click)="clearDays()"><b>{{ 'MENU_CALENDAR.CLEAR_DAYS' | translate }}</b></button>
+        <button (click)="randomDays()"><b>{{ 'MENU_CALENDAR.RANDOM_DAYS' | translate }}</b></button>
+        <button (click)="validDays()"><b>{{ 'MENU_CALENDAR.VALID_DAYS' | translate }}</b></button>
+      </div>
+    <br/>
+    <app-view-stats-dashboard *ngIf="menu"
+    [menu]="menu"
+    [userConfs]="userConfs"
+    [events]="updateStatsSubject"
+    [isLastPage]="isLastPage"
+    >
+    </app-view-stats-dashboard>
+    <div align="center" *ngIf="(isMobile || isTablet) && isLastPage">
+        <button mat-raised-button (click)="generateShoppingList()"><b>{{ 'MENU_CALENDAR.SHOPPING_LIST' | translate }}</b></button>
+        <button (click)="clearMenu()"><b>{{ 'MENU_CALENDAR.CLEAR_MENU' | translate }}</b></button>
+        <button (click)="randomMenu()"><b>{{ 'MENU_CALENDAR.RANDOM_MENU' | translate }}</b></button>
+        <button (click)="validMenu()"><b>{{ 'MENU_CALENDAR.VALID_MENU' | translate }}</b></button>
+        <button (click)="saveTemplate()"><b>{{ 'MENU_CALENDAR.SAVE_AS_TEMPLATE' | translate }}</b></button>
+        <button (click)="fillFromTemplate()"><b>{{ 'MENU_CALENDAR.FILL_FROM_TEMPLATE' | translate }}</b></button>
+        <button (click)="printMenu()"><b>{{ 'MENU_CALENDAR.PRINT_MENU' | translate }}</b></button>
+        <button (click)="shareMenu()" *ngIf="currentUser.facebookUserId"><b>{{ 'MENU_CALENDAR.FACEBOOK_SHARE' | translate }}</b></button>
+      </div>
+  </div>
+</div>

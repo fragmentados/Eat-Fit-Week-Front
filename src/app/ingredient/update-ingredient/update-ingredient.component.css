@@ -1,0 +1,27 @@
+.horizontal-div {
+  display: flex;
+}
+.margin-left-label {
+  margin-left: 10px;
+}
+
+.estimate-stats {
+  display: flex;
+}
+
+.btn-estimate {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .estimate-stats {
+    display: block;
+  }
+  .btn-estimate {
+    margin-left: 0px;
+  }
+}

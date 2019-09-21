@@ -1,0 +1,143 @@
+{
+  "APP_MENU": {
+    "SIGN_UP_LOGIN": "Sign up / Login",
+    "SIGN_UP": "Sign up",
+    "LOGIN": "Login",
+    "USERS": "Usuers",
+    "INGREDIENTS": "Ingredients",
+    "LIST_INGREDIENTS": "List Ingredients",
+    "ADD_INGREDIENT": "Add Ingredient",
+    "DISHES": "Dishes",
+    "LIST_DISHES": "List Dishes",
+    "ADD_DISH": "Add Dish",
+    "MENU_CALENDAR": "Menu Calendar",
+    "CONFIGS": "Configs",
+    "LOGOUT": "Logout"
+  },
+  "ADD_INGREDIENT": {
+    "ADD_INGREDIENT": "Add Ingredient",
+    "ESTIMATE_STATS": "Estimate Stats",
+    "CATEGORIES": "Categories",
+    "BANNED_CATEGORY_INGREDIENT_MESSAGE": "The Food Category you have selected is currently banned by you"
+  },
+  "LIST_INGREDIENTS": {
+    "INGREDIENT_DETAILS": "Ingredient Details",
+    "CATEGORY": "Category",
+    "WARNING": "Warning"
+  },
+  "UPDATE_INGREDIENT": {
+    "UPDATE_INGREDIENT": "Update Ingredient"
+  },
+  "ADD_DISHES": {
+    "CLEAR": "Clear",
+    "SELECTED_INGREDIENTS": "Selected ingredients",
+    "QUANTITY": "Quantity",
+    "RECIPE": "Recipe",
+    "ALLOWED_MEALS": "Allowed Meals",
+    "STATS_TITLE": "Dish Stats"
+  },
+  "LIST_DISHES": {
+    "DISHES_DETAILS": "Dish Details",
+    "ADD_TO_MENU": "Add To Menu"
+  },
+  "UPDATE_DISH": {
+    "UPDATE_DISH": "Update Dish"
+  },
+  "MENU_CALENDAR": {
+    "WEEKLY_OVERVIEW": "Weekly Overview",
+    "CREATE_MENU": "Create Menu",
+    "CLEAR_MENU": "Clear Menu",
+    "SHOPPING_LIST": "Shopping List",
+    "RANDOM_MENU": "Random Menu",
+    "VALID_MENU": "Valid Menu",
+    "SAVE_AS_TEMPLATE": "Save as Template",
+    "FILL_FROM_TEMPLATE": "Fill From Template",
+    "PRINT_MENU": "Print Menu",
+    "FACEBOOK_SHARE": "Facebook Share",
+    "CLEAR_DAY": "Clear Day",
+    "RANDOM_DAY": "Random Day",
+    "VALID_DAY": "Valid Day",
+    "CLEAR_DAYS": "Clear Days",
+    "RANDOM_DAYS": "Random Days",
+    "VALID_DAYS": "Valid Days"
+  },
+  "SAVE_TEMPLATE": {
+    "TITLE": "Save currrent Menu As Template",
+    "TEMPLATE_NAME": "Template Name"
+  },
+  "SELECT_TEMPLATE": {
+    "SELECT_TEMPLATE": "Select Template",
+    "TEMPLATE": "Template"
+  },
+  "VIEW_STATS":{
+    "STAT": "Stat",
+    "VALUE": "Value",
+    "STATUS": "Status"
+  },
+  "STAT_DASHBOARD": {
+    "SWITCH_DAILY": "Switch to Daily",
+    "SWITCH_WEEKLY": "Switch to Weekly",
+    "WEEKLY_TITLE": "Weekly Nutrition Stats",
+    "DAILY_TITLE": "Daily Nutrition Stats",
+    "MOBILE_TITLE": "Nutrition Stats"
+  },
+  "CALENDAR": {
+    "PREVIOUS": "Previous",
+    "TODAY": "Today",
+    "NEXT": "Next",
+    "ADD": "Add",
+    "SUGGEST": "Suggest",
+    "SHOPPING_LIST": "Shopping List",
+    "INGREDIENT": "Ingredient",
+    "UNITS": "Units",
+    "QUANTITY": "Quantity",
+    "MERCADONA": "Mercadona Price Estimation",
+    "PRINT": "Print",
+    "OK": "Ok",
+    "ADD_DISH_TO_MENU": "Add Dish To Menu",
+    "SELECT_DISH": "Select Dish"
+  },
+  "USER_CONFS": {
+    "USER_CONFS": "User Confs",
+    "MAX_CAL": "Max Calories per Week",
+    "MAX_PRO": "Max Proteins per Week",
+    "MAX_FAT": "Max Fats per Week",
+    "MAX_CAR": "Max Carbohydrates per Week",
+    "BAN_A_CATEGORY": "Ban a category",
+    "BAN_CATEGORY": "Ban category",
+    "BANNED_CATEGORIES": "Banned Categories",
+    "UNBAN": "Unban",
+    "MEALS_PER_WEEK": "Meals Per Week",
+    "ADD_MEAL": "Add Meal",
+    "UPDATE_CONFS": "Update Confs",
+    "MEAL": "Meal"
+  },
+  "COMMON": {
+    "NAME": "Name",
+    "PROTEINS": "Proteins",
+    "CALORIES": "Calories",
+    "FATS": "Fats",
+    "CARBOHYDRATES": "Carbohydrates",
+    "GRAMS": "grams",
+    "CREATE": "Create",
+    "UPDATE": "Update",
+    "DELETE": "Delete",
+    "ADD": "Add",
+    "SAVE": "Save",
+    "SELECT": "Select",
+    "EMAIL_ADDRESS": "Email address",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "LOGIN_FACEBOOK": "Login with Facebook",
+    "SIGN_UP": "Sign up",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "INGREDIENT_CREATED": "Ingredient created successfully.",
+    "TEMPLATE_SAVED": "Template correctly saved",
+    "MENU_FILLED": "Menu Filled From Template"
+  },
+  "Calories": "Calories",
+  "Proteins": "Proteins",
+  "Fats": "Fats",
+  "Carbohydrates": "Carbohydrates"
+}

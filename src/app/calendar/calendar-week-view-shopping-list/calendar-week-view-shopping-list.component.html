@@ -1,0 +1,31 @@
+<div>
+  <h2 mat-dialog-title>{{ 'CALENDAR.SHOPPING_LIST' | translate }}</h2>
+  <div id="shopping-list dialog">
+    <hr>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>{{ 'CALENDAR.INGREDIENT' | translate }}</th>
+        <th>{{ 'CALENDAR.UNITS' | translate }}</th>
+        <th>{{ 'CALENDAR.QUANTITY' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of data.items">
+        <td><b>{{item.ingredientName}}</b></td>
+        <td><b>{{item.units}}</b></td>
+        <td><b>{{item.quantity}}</b></td>
+      </tr>
+      </tbody>
+    </table>
+    <hr>
+    <div>
+      <label>{{ 'CALENDAR.MERCADONA' | translate }}: {{data.priceEstimation.price}} €</label>
+    </div>
+  </div>
+  <div mat-dialog-actions class="modal-footer">
+    <button class="btn btn-primary onPrint" (click)="printDialog()">{{ 'CALENDAR.PRINT' | translate }}</button>
+    <button class="btn btn-success onPrint" mat-button (click)="onOkClick()">{{ 'CALENDAR.OK' | translate }}</button>
+  </div>
+</div>
+

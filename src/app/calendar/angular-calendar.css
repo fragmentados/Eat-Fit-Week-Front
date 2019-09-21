@@ -1,0 +1,69 @@
+.cal-week-view {
+  background-color: map-get($theme, bg-primary);
+
+  .cal-day-headers {
+    border-color: map-get($theme, border-color);
+  }
+
+  .cal-day-headers .cal-header {
+    &:not(:last-child) {
+      border-right-color: map-get($theme, border-color);
+    }
+
+    &:first-child {
+      border-left-color: map-get($theme, border-color);
+    }
+  }
+
+  .cal-day-headers .cal-header:hover,
+  .cal-day-headers .cal-drag-over {
+    background-color: map-get($theme, bg-active);
+  }
+
+  .cal-day-column {
+    border-left-color: map-get($theme, border-color);
+  }
+
+  .cal-event {
+    background-color: map-get($theme, event-color-secondary);
+    border-color: map-get($theme, event-color-primary);
+    color: map-get($theme, event-color-primary);
+  }
+
+  .cal-all-day-events {
+    border-color: map-get($theme, border-color);
+  }
+
+  .cal-header.cal-today {
+    background-color: map-get($theme, today-bg);
+  }
+
+  .cal-header.cal-weekend span {
+    color: map-get($theme, weekend-color);
+  }
+
+  .cal-time-events {
+    border-color: map-get($theme, border-color);
+
+    .cal-day-columns {
+      &:not(.cal-resize-active) {
+        .cal-hour-segment:hover {
+          background-color: map-get($theme, bg-active);
+        }
+      }
+    }
+  }
+
+  .cal-hour-odd {
+    background-color: map-get($theme, bg-secondary);
+  }
+
+  .cal-drag-over .cal-hour-segment {
+    background-color: map-get($theme, bg-active);
+  }
+
+  .cal-hour:not(:last-child) .cal-hour-segment,
+  .cal-hour:last-child :not(:last-child) .cal-hour-segment {
+    border-bottom-color: map-get($theme, border-color);
+  }
+}

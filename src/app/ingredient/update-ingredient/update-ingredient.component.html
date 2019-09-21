@@ -1,0 +1,54 @@
+<div class="col-md-6">
+    <h2 class="text-center">{{ 'UPDATE_INGREDIENT.UPDATE_INGREDIENT' | translate }}</h2>
+  <form>
+
+    <div class="form-group">
+      <label for="name">{{ 'COMMON.NAME' | translate }}:</label>
+      <div class="estimate-stats">
+        <input [(ngModel)]="ingredient.name" placeholder="{{ 'COMMON.NAME' | translate }}" name="Name" class="form-control" id="Name">
+        <button class="btn btn-success btn-estimate" (click)="estimateNutrition()">{{ 'ADD_INGREDIENT.ESTIMATE_STATS' | translate }}</button>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="categories">
+      <label for="categorySelect">{{ 'ADD_INGREDIENT.CATEGORIES' | translate }}:</label>
+      <select [(ngModel)]="ingredient.categoryId" #CategoriesSelect="ngModel" name="CategoriesSelect" class="form-control" id="Categories" >
+        <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="proteins">{{ 'COMMON.PROTEINS' | translate }}:</label>
+      <div class="horizontal-div">
+        <input type="proteins" [(ngModel)]="ingredient.proteins" type="number" placeholder="{{ 'COMMON.PROTEINS' | translate }}" name="proteins" class="form-control" id="proteins">
+        <label class="margin-left-label"> / 100 {{ 'COMMON.GRAMS' | translate }}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="calories">{{ 'COMMON.CALORIES' | translate }}:</label>
+      <div class="horizontal-div">
+        <input [(ngModel)]="ingredient.calories" type="number" placeholder="{{ 'COMMON.CALORIES' | translate }}" name="calories" class="form-control" id="calories">
+        <label class="margin-left-label"> / 100 {{ 'COMMON.GRAMS' | translate }}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="fats">{{ 'COMMON.FATS' | translate }}:</label>
+        <div class="horizontal-div">
+          <input [(ngModel)]="ingredient.fats" type="number" placeholder="{{ 'COMMON.FATS' | translate }}" name="fats" class="form-control" id="fats">
+          <label class="margin-left-label"> / 100 {{ 'COMMON.GRAMS' | translate }}</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fats">{{ 'COMMON.CARBOHYDRATES' | translate }}:</label>
+      <div class="horizontal-div">
+        <input [(ngModel)]="ingredient.carbohydrates" type="number" placeholder="{{ 'COMMON.CARBOHYDRATES' | translate }}" name="carbohydrates" class="form-control" id="carbohydrates">
+        <label class="margin-left-label"> / 100 {{ 'COMMON.GRAMS' | translate }}</label>
+      </div>
+    </div>
+
+    <button class="btn btn-success" (click)="updateIngredient()">{{ 'COMMON.UPDATE' | translate }}</button>
+  </form>
+  </div>

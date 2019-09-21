@@ -1,0 +1,30 @@
+<div class="col-md-6">
+    <h2>{{ 'LIST_DISHES.DISHES_DETAILS' | translate }}</h2>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>{{ 'COMMON.NAME' | translate }}</th>
+        <th>{{ 'COMMON.CALORIES' | translate }}</th>
+        <th *ngIf="isTablet || !isMobile">{{ 'COMMON.FATS' | translate }}</th>
+        <th *ngIf="isTablet || !isMobile">{{ 'COMMON.PROTEINS' | translate }}</th>
+        <th *ngIf="isTablet || !isMobile">{{ 'COMMON.CARBOHYDRATES' | translate }}</th>
+        <th>{{ 'COMMON.UPDATE' | translate }}</th>
+        <th>{{ 'COMMON.DELETE' | translate }}</th>
+        <th *ngIf="!isTablet && !isMobile">{{ 'LIST_DISHES.ADD_TO_MENU' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let dish of dishes">
+        <td>{{dish.name}}</td>
+        <td *ngIf="isMobile">{{dishCalories(dish)}}</td>
+        <ng-container *ngFor="let stat of dish.stats">
+          <td *ngIf="isTablet || !isMobile">{{stat.value}}</td>
+        </ng-container>
+        <td><button class="btn btn-info" (click)="updateDish(dish)">{{ 'COMMON.UPDATE' | translate }}</button></td>
+        <td><button class="btn btn-danger" (click)="deleteDish(dish)">{{ 'COMMON.DELETE' | translate }}</button></td>
+        <td *ngIf="!isTablet && !isMobile"><button class="btn btn-success" (click)="addToMenu(dish)">{{ 'LIST_DISHES.ADD_TO_MENU' | translate }}</button></td>
+      </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+<div>
+  <h2 mat-dialog-title>{{ 'SAVE_TEMPLATE.TITLE' | translate }}</h2>
+<form>
+
+  <div class="form-group">
+    <label for="templateName">{{ 'SAVE_TEMPLATE.TEMPLATE_NAME' | translate }}:</label>
+    <input [(ngModel)]="templateName" placeholder="{{ 'COMMON.NAME' | translate }}" name="Name" class="form-control" id="Name">
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="templateName" cdkFocusInitial>{{ 'COMMON.SAVE' | translate }}</button>
+  </div>
+</form>
+</div>

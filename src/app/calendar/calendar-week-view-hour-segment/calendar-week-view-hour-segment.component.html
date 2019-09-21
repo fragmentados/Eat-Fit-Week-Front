@@ -1,0 +1,16 @@
+
+<!--[style.width.px]="segment.name != null ? 300 : style.width.px "-->
+<!--[ngClass]="segment.cssClass"-->
+<div
+  class="cal-hour-segment"
+  [style.height.px]="segmentHeight"
+>
+  <div class="cal-time" *ngIf="isMealLabel">
+    {{segment.name}}
+  </div>
+  <div *ngIf="!isMealLabel && !event">
+    <button style="margin-top:10px;margin-left: 5px" (click)="addDishPopup()">{{ 'CALENDAR.ADD' | translate }}</button>
+    <button style="margin-left:10px" (click)="suggestDish()">{{ 'CALENDAR.SUGGEST' | translate }}</button>
+  </div>
+</div>
+

@@ -1,0 +1,25 @@
+.halfscreendiv {
+  display: flex;
+}
+.btn {
+  margin-left: 1%;
+}
+.divselectbutton{
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .halfscreendiv {
+    display: block;
+  }
+
+  .divselectbutton {
+    display: block;
+  }
+
+  .btn {
+    margin-left: 0%;
+    margin-bottom: 7%;
+    margin-top: 10px;
+    width:100%;
+  }
+}

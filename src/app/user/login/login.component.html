@@ -1,0 +1,19 @@
+<div class="col-md-6">
+    <h2 class="text-center">{{ 'APP_MENU.LOGIN' | translate }}</h2>
+  <form>
+    <div class="form-group">
+      <label for="email">{{ 'COMMON.EMAIL_ADDRESS' | translate }}:</label>
+      <input type="email" [(ngModel)]="login.email" placeholder="{{ 'COMMON.EMAIL' | translate }}" name="email" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">{{ 'COMMON.PASSWORD' | translate }}:</label>
+      <input type="password" [(ngModel)]="login.password" placeholder="{{ 'COMMON.PASSWORD' | translate }}" name="password" class="form-control" id="password">
+    </div>
+
+    <button id="loginButton" class="btn btn-success" (click)="loginAttempt()">{{ 'APP_MENU.LOGIN' | translate }}</button>
+    <button style="margin-left:10px;" class="btn btn-primary" (click)="onLoginClick()">
+      {{ 'COMMON.LOGIN_FACEBOOK' | translate }}
+    </button>
+  </form>
+  </div>

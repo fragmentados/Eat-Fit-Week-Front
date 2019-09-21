@@ -1,0 +1,32 @@
+<div class="col-md-6">
+  <h2> {{ 'LIST_INGREDIENTS.INGREDIENT_DETAILS' | translate }}</h2>
+
+  <table class="table" show-filter="true">
+    <thead>
+    <tr>
+      <th>{{ 'COMMON.NAME' | translate }}</th>
+      <th *ngIf="!isTablet && !isMobile">{{ 'LIST_INGREDIENTS.CATEGORY' | translate }}</th>
+      <th>{{ 'COMMON.CALORIES' | translate }}</th>
+      <th *ngIf="isTablet || !isMobile">{{ 'COMMON.FATS' | translate }}</th>
+      <th *ngIf="isTablet || !isMobile">{{ 'COMMON.PROTEINS' | translate }}</th>
+      <th *ngIf="isTablet || !isMobile">{{ 'COMMON.CARBOHYDRATES' | translate }}</th>
+      <th *ngIf="!isTablet && !isMobile">{{ 'LIST_INGREDIENTS.WARNING' | translate }}</th>
+      <th>{{ 'COMMON.UPDATE' | translate }}</th>
+      <th>{{ 'COMMON.DELETE' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ingredient of ingredients">
+      <td>{{ingredient.name}}</td>
+      <td *ngIf="!isTablet && !isMobile">{{ingredient.category.name}}</td>
+      <td *ngIf="isMobile">{{ingredientCalories(ingredient)}}</td>
+      <ng-container *ngFor="let stat of ingredient.stats">
+        <td *ngIf="isTablet || !isMobile">{{stat.value}}</td>
+      </ng-container>
+      <td *ngIf="!isTablet && !isMobile"><img title="{{warningText}}" *ngIf="isBanned(ingredient)" width="32px" height="32px" src="assets/warning.png"></td>
+      <td><button class="btn btn-success" (click)="updateIngredient(ingredient)">{{ 'COMMON.UPDATE' | translate }}</button></td>
+      <td><button class="btn btn-danger" (click)="deleteIngredient(ingredient)">{{ 'COMMON.DELETE' | translate }}</button></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>

@@ -1,0 +1,75 @@
+<!--<div class="container-fluid">-->
+<div class="col-md-offset-1">
+  <h1 align="center" *ngIf="!isMobile">
+    <img width="75px" height="75px" src="assets/Logo.png"> {{title}}!
+  </h1>
+</div>
+
+<!-- Top Navigation Menu -->
+<div class="efw-topnav" id="myTopnav">
+  <a *ngIf="isMobile">{{title}}</a>
+  <div class="efw-dropdown" *ngIf="!currentUser">
+    <button class="efw-dropbtn" >{{ 'APP_MENU.SIGN_UP_LOGIN' | translate }}
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="efw-dropdown-content">
+      <a routerLink="/users/addUser">{{ 'APP_MENU.SIGN_UP' | translate }}</a>
+      <a routerLink="/users/login">{{ 'APP_MENU.LOGIN' | translate }}</a>
+    </div>
+  </div>
+  <div *ngIf="currentUser">
+    <!-- REVIEW IF ITS NEEDED FOR ADMIN USER -->
+    <!--<div class="efw-dropdown" *ngIf="!currentUser">
+      <button class="efw-dropbtn">Users
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="efw-dropdown-content">
+        <a routerLink="/users">List Users</a>
+        <a routerLink="/users/addUser">Add User</a>
+        <a routerLink="/users/userConfs">User Configurations</a>
+      </div>
+    </div>-->
+    <div class="efw-dropdown">
+      <button class="efw-dropbtn">{{ 'APP_MENU.INGREDIENTS' | translate }}
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="efw-dropdown-content">
+        <a id="menuListIngredients" routerLink="/ingredients">{{ 'APP_MENU.LIST_INGREDIENTS' | translate }}</a>
+        <a routerLink="/ingredients/addIngredient">{{ 'APP_MENU.ADD_INGREDIENT' | translate }}</a>
+      </div>
+    </div>
+    <div class="efw-dropdown">
+      <button class="efw-dropbtn">{{ 'APP_MENU.DISHES' | translate }}
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="efw-dropdown-content">
+        <a routerLink="/dishes">{{ 'APP_MENU.LIST_DISHES' | translate }}</a>
+        <a routerLink="/dishes/addDish">{{ 'APP_MENU.ADD_DISH' | translate }}</a>
+      </div>
+    </div>
+    <a routerLink="/menu">{{ 'APP_MENU.MENU_CALENDAR' | translate }}</a>
+    <a style="float:right;" *ngIf="!isMobile && !isTablet && currentUser && currentUser.facebookUserId">
+      <img src="https://graph.facebook.com/{{currentUser.facebookUserId}}/picture"/>
+    </a>
+    <div class="efw-dropdown user-menu" *ngIf="currentUser">
+      <button class="efw-dropbtn">{{currentUser.firstName}}
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="efw-dropdown-content">
+        <!--<a routerLink="/users">List Users</a>
+        <a routerLink="/users/addUser">Add User</a>-->
+        <a routerLink="/users/userConfs">{{ 'APP_MENU.CONFIGS' | translate }}</a>
+        <a (click)="logout()">{{ 'APP_MENU.LOGOUT' | translate }}</a>
+      </div>
+    </div>
+  </div>
+  <a href="javascript:void(0);" class="efw-icon" (click)="displayMobileNavBar()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div class="container-fluid">
+  <br/>
+  <router-outlet></router-outlet>
+</div>
+<!--</div>-->
+

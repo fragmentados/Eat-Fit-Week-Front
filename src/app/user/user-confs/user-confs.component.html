@@ -1,0 +1,76 @@
+
+<h2 class="text-center">{{ 'USER_CONFS.USER_CONFS' | translate }}</h2>
+<form>
+  <div *ngIf="userConf" class="halfscreendiv">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="maxCalories">{{ 'USER_CONFS.MAX_CAL' | translate }}:</label>
+        <input type="number" [(ngModel)]="userConf.maxCaloriesPerWeek" placeholder="{{ 'USER_CONFS.MAX_CAL' | translate }}" name="maxCalories" class="form-control" id="maxCalories">
+      </div>
+      <div class="form-group">
+          <label for="maxProteins">{{ 'USER_CONFS.MAX_PRO' | translate }}:</label>
+          <input type="number" [(ngModel)]="userConf.maxProteinsPerWeek" placeholder="{{ 'USER_CONFS.MAX_PRO' | translate }}" name="maxProteins" class="form-control" id="maxProteins">
+      </div>
+      <div class="form-group">
+          <label for="maxFats">{{ 'USER_CONFS.MAX_FAT' | translate }}:</label>
+          <input type="number" [(ngModel)]="userConf.maxFatsPerWeek" placeholder="{{ 'USER_CONFS.MAX_FAT' | translate }}" name="maxFats" class="form-control" id="maxFats">
+      </div>
+      <div class="form-group">
+          <label for="maxCarbohydrates">{{ 'USER_CONFS.MAX_CAR' | translate }}:</label>
+          <input type="number" [(ngModel)]="userConf.maxCarbohydratesPerWeek" placeholder="{{ 'USER_CONFS.MAX_CAR' | translate }}" name="maxCarbohydrates" class="form-control" id="maxCarbohydrates">
+      </div>
+      <div class="form-group" *ngIf="categories">
+        <label for="categorySelect">{{ 'USER_CONFS.BAN_A_CATEGORY' | translate }}:</label>
+        <div class="divselectbutton">
+          <select [(ngModel)]="selectedCategory" #CategoriesSelect="ngModel" name="CategoriesSelect" class="form-control" id="Categories" >
+            <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+          </select>
+          <button class="btn btn-danger" (click)="banCategory()">{{ 'USER_CONFS.BAN_CATEGORY' | translate }}</button>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="bannedCategories">
+        <label for="categorySelect">{{ 'USER_CONFS.BANNED_CATEGORIES' | translate }}:</label>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>{{ 'COMMON.NAME' | translate }}</th>
+              <th>{{ 'COMMON.DELETE' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let category of bannedCategories">
+              <td>{{category.name}}</td>
+              <td><button class="btn btn-danger" (click)="unBanCategory(category)">{{ 'USER_CONFS.UNBAN' | translate }}</button></td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group" *ngIf="categories">
+        <label for="meals">{{ 'USER_CONFS.MEALS_PER_WEEK' | translate }}:</label>
+        <div class="divselectbutton">
+          <input [(ngModel)]="mealToAdd" placeholder="{{ 'USER_CONFS.MEAL' | translate }}" name="Meal" class="form-control" id="Meal">
+          <button class="btn btn-info" (click)="addMeal()">{{ 'USER_CONFS.ADD_MEAL' | translate }}</button>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="userConf.meals">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>{{ 'COMMON.NAME' | translate }}</th>
+              <th>{{ 'COMMON.DELETE' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let meal of userConf.meals">
+              <td><div contenteditable>{{meal.name}}</div></td>
+              <td><button class="btn btn-danger" (click)="removeMeal(meal)">{{ 'COMMON.DELETE' | translate }}</button></td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" (click)="updateConfs()">{{ 'USER_CONFS.UPDATE_CONFS' | translate }}</button>
+</form>

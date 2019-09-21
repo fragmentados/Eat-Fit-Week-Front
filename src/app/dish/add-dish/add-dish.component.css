@@ -1,0 +1,48 @@
+.col-xs-6 {
+  width:50%;
+  float:left;
+  display:flex;
+}
+
+.ingredient-select {
+  display: flex;
+}
+
+.add-dish {
+  display: flex;
+}
+
+.ingredient-select-element {
+  margin-left: 10px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.ingredient-select-buttons {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .ingredient-select {
+    display: block;
+  }
+  .add-dish {
+    display: block;
+  }
+  .ingredient-select-element {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .ingredient-select-buttons {
+    display:block;
+  }
+
+  button {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+}

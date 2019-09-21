@@ -1,0 +1,20 @@
+<div class="col-md-6">
+  <h2 *ngIf="statsTitle"> {{statsTitle}}</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>{{ 'VIEW_STATS.STAT' | translate }}</th>
+      <th>{{ 'VIEW_STATS.VALUE' | translate }}</th>
+      <th *ngIf="areMenuStats">{{ 'VIEW_STATS.STATUS' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let stat of stats">
+      <td><b>{{stat.name | translate}}</b></td>
+      <td><b>{{stat.value}}</b></td>
+      <td *ngIf="areMenuStats && userConfs && isStatOverLimit(stat)"><img width="45px" height="30px" src="assets/redX.jpg"/></td>
+      <td *ngIf="areMenuStats && userConfs && !isStatOverLimit(stat)"><img width="32px" height="32px" src="assets/tick.png"/></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

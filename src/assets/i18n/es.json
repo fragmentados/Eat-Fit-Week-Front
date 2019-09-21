@@ -1,0 +1,143 @@
+{
+  "APP_MENU": {
+    "SIGN_UP_LOGIN": "Registro / Acceder",
+    "SIGN_UP": "Registro",
+    "LOGIN": "Acceder",
+    "USERS": "Usuarios",
+    "INGREDIENTS": "Ingredientes",
+    "LIST_INGREDIENTS": "Ver Ingredientes",
+    "ADD_INGREDIENT": "Crear Ingrediente",
+    "DISHES": "Platos",
+    "LIST_DISHES": "Ver Platos",
+    "ADD_DISH": "Crear Plato",
+    "MENU_CALENDAR": "Calendario de Menús",
+    "CONFIGS": "Configs",
+    "LOGOUT": "Desconectarse"
+  },
+  "ADD_INGREDIENT": {
+    "ADD_INGREDIENT": "Crear Ingrediente",
+    "ESTIMATE_STATS": "Estimar Estadísticas",
+    "CATEGORIES": "Categorías",
+    "BANNED_CATEGORY_INGREDIENT_MESSAGE": "La Categoría Alimenticia que has seleccionado está prohibida por ti"
+  },
+  "LIST_INGREDIENTS": {
+    "INGREDIENT_DETAILS": "Detalles de Ingredientes",
+    "CATEGORY": "Categoría",
+    "WARNING": "Advertencia"
+  },
+  "UPDATE_INGREDIENT": {
+    "UPDATE_INGREDIENT": "Actualizar Ingrediente"
+  },
+  "ADD_DISHES": {
+    "CLEAR": "Limpiar",
+    "SELECTED_INGREDIENTS": "Ingredientes seleccionados",
+    "QUANTITY": "Cantidad",
+    "RECIPE": "Receta",
+    "ALLOWED_MEALS": "Comidas Permitidas",
+    "STATS_TITLE": "Stats de Plato"
+  },
+  "LIST_DISHES": {
+    "DISHES_DETAILS": "Detalles de Platos",
+    "ADD_TO_MENU": "Añadir a Menu"
+  },
+  "UPDATE_DISH": {
+    "UPDATE_DISH": "Actualizar Plato"
+  },
+  "MENU_CALENDAR": {
+    "WEEKLY_OVERVIEW": "Visión Semanal",
+    "CREATE_MENU": "Crear Menú",
+    "CLEAR_MENU": "Limpiar Menu",
+    "SHOPPING_LIST": "Lista de la Compra",
+    "RANDOM_MENU": "Menú Aleatorio",
+    "VALID_MENU": "Menú Válido",
+    "SAVE_AS_TEMPLATE": "Guardar como Plantilla",
+    "FILL_FROM_TEMPLATE": "Rellenar desde Plantilla",
+    "PRINT_MENU": "Imprimir Menú",
+    "FACEBOOK_SHARE": "Compartir en Facebook",
+    "CLEAR_DAY": "Limpiar Día",
+    "RANDOM_DAY": "Día Aleatorio",
+    "VALID_DAY": "Día Válido",
+    "CLEAR_DAYS": "Limpiar Días",
+    "RANDOM_DAYS": "Días Aleatorios",
+    "VALID_DAYS": "Días Válidos"
+  },
+  "SAVE_TEMPLATE": {
+    "TITLE": "Guardar menú actual como Plantilla",
+    "TEMPLATE_NAME": "Nombre de Plantilla"
+  },
+  "SELECT_TEMPLATE": {
+    "SELECT_TEMPLATE": "Seleccionar Plantilla",
+    "TEMPLATE": "Plantilla"
+  },
+  "VIEW_STATS":{
+    "STAT": "Stat",
+    "VALUE": "Valor",
+    "STATUS": "Estado"
+  },
+  "STAT_DASHBOARD": {
+    "SWITCH_DAILY": "Cambiar a diario",
+    "SWITCH_WEEKLY": "Cambiar a semanal",
+    "WEEKLY_TITLE": "Stats Nutricionales Semanales",
+    "DAILY_TITLE": "Stats Nutricionales Diarios",
+    "MOBILE_TITLE": "Stats Nutricionales"
+  },
+  "CALENDAR": {
+    "PREVIOUS": "Anterior",
+    "TODAY": "Hoy",
+    "NEXT": "Siguiente",
+    "ADD": "Añadir",
+    "SUGGEST": "Sugerir",
+    "SHOPPING_LIST": "Lista de la Compra",
+    "INGREDIENT": "Ingrediente",
+    "UNITS": "Unidades",
+    "QUANTITY": "Cantidad",
+    "MERCADONA": "Estimación de Precio en Mercadona",
+    "PRINT": "Imprimir",
+    "OK": "Ok",
+    "ADD_DISH_TO_MENU": "Añadir Plato a Menu",
+    "SELECT_DISH": "Seleccionar Plato"
+  },
+  "USER_CONFS": {
+    "USER_CONFS": "Confs de Usuario",
+    "MAX_CAL": "Max Calorías por Semana",
+    "MAX_PRO": "Max Proteinas por Semana",
+    "MAX_FAT": "Max Grasas por Semana",
+    "MAX_CAR": "Max Carbohidratos por Semana",
+    "BAN_A_CATEGORY": "Prohibir una categoría",
+    "BAN_CATEGORY": "Prohibir categoría",
+    "BANNED_CATEGORIES": "Categorías Prohibidas",
+    "UNBAN": "Desprohibir",
+    "MEALS_PER_WEEK": "Comidas por Semana",
+    "ADD_MEAL": "Añadir Comida",
+    "UPDATE_CONFS": "Actualizar Confs",
+    "MEAL": "Comida"
+  },
+  "COMMON": {
+    "NAME": "Nombre",
+    "PROTEINS": "Proteínas",
+    "CALORIES": "Calorías",
+    "FATS": "Grasas",
+    "CARBOHYDRATES": "Carbohidratos",
+    "GRAMS": "gramos",
+    "CREATE": "Crear",
+    "UPDATE": "Actualizar",
+    "DELETE": "Borrar",
+    "ADD": "Añadir",
+    "SAVE": "Guardar",
+    "SELECT": "Seleccionar",
+    "EMAIL_ADDRESS": "Dirección de correo",
+    "EMAIL": "Email",
+    "PASSWORD": "Contraseña",
+    "LOGIN_FACEBOOK": "Acceder con Facebook",
+    "SIGN_UP": "Registro",
+    "FIRST_NAME": "Nombre",
+    "LAST_NAME": "Apellidos",
+    "INGREDIENT_CREATED": "Ingrediente creado con éxito.",
+    "TEMPLATE_SAVED": "Plantilla guardada con éxito",
+    "MENU_FILLED": "Menú Rellenado desde Plantilla"
+  },
+  "Calories": "Calorías",
+  "Proteins": "Proteinas",
+  "Fats": "Grasas",
+  "Carbohydrates": "Carbohidratos"
+}

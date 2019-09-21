@@ -1,0 +1,70 @@
+<div class="col-md-6">
+    <h2 class="text-center">{{ 'UPDATE_DISH.UPDATE_DISH' | translate }}</h2>
+  <form>
+
+    <div class="form-group" *ngIf="ingredients">
+      <label for="ingredientselect">{{ 'APP_MENU.INGREDIENTS' | translate }}:</label>
+      <div class="form-group ingredient-select">
+        <select class="form-control ingredient-select-element" [(ngModel)]="selectedIng" #IngredientsSelect="ngModel" name="IngredientsSelect" id="Ingredients">
+          <option *ngFor="let ingredient of ingredients" [ngValue]="ingredient">{{ingredient.name}}</option>
+        </select>
+        <input class="form-control ingredient-select-element" [(ngModel)]="ingredientQuantity" type="number" placeholder="0" name="Quantity" id="Quantity">
+        <div class="ingredient-select-buttons">
+          <button class="btn btn-success" (click)="addIngredient()">{{ 'COMMON.ADD' | translate }}</button>
+          <button class="btn btn-danger" (click)="clearForm()">{{ 'ADD_DISHES.CLEAR' | translate }}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="selectedIngredients.length > 0">
+      <label for="selectedingredients">{{ 'ADD_DISHES.SELECTED_INGREDIENTS' | translate }}:</label>
+      <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>{{ 'COMMON.NAME' | translate }}</th>
+            <th>{{ 'ADD_DISHES.QUANTITY' | translate }}</th>
+            <th>{{ 'COMMON.DELETE' | translate }}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let ingredient of selectedIngredients">
+            <td>{{ingredient.ingredient.name}}</td>
+            <td>{{ingredient.quantity}}</td>
+            <td><button class="btn btn-danger" (click)="removeIngredient(ingredient)">{{ 'COMMON.DELETE' | translate }}</button></td>
+          </tr>
+          </tbody>
+        </table>
+
+    </div>
+
+    <div class="form-group">
+        <label for="recipe">{{ 'ADD_DISHES.RECIPE' | translate }}:</label>
+        <br/>
+        <textarea style="width:100%;" [(ngModel)]="dish.recipe" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="allowedMeals">{{ 'ADD_DISHES.ALLOWED_MEALS' | translate }}:</label>
+      <div class="form-group">
+          <label *ngFor="let meal of allowedMeals;let index = index;" style="text-align: center;margin:10px">
+            {{meal.name}}<br>
+            <input [(ngModel)]="selectedMeals[index]" #MealSelect="ngModel" name="{{'MealSelect' + index}}" type="checkbox">
+          </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">{{ 'COMMON.NAME' | translate }}:</label>
+      <div class="form-group update-dish">
+        <input [(ngModel)]="dish.name" placeholder="{{ 'COMMON.NAME' | translate }}" name="Name" class="form-control" id="Name">
+        <button class="btn btn-success" (click)="updateDish()">{{ 'COMMON.UPDATE' | translate }}</button>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="dishStats">
+      <app-view-stats
+      [statsTitle]="statsTitle"
+      [stats]="dishStats"
+      [areMenuStats]="false"
+      [viewageType]="Dish">
+      </app-view-stats>
+    </div>
+  </form>
+  </div>

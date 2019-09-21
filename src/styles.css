@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+/*@import "../src/app/calendar/angular-calendar.css";*/
+
+/*.cal-week-view .cal-time {
+  font-weight: bold;
+  padding-top: 5px;
+  width: 200px;
+  text-align: center;
+  white-space:nowrap;
+}*/
