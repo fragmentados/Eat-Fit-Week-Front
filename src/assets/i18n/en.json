@@ -134,7 +134,8 @@
     "LAST_NAME": "Last Name",
     "INGREDIENT_CREATED": "Ingredient created successfully.",
     "TEMPLATE_SAVED": "Template correctly saved",
-    "MENU_FILLED": "Menu Filled From Template"
+    "MENU_FILLED": "Menu Filled From Template",
+    "UNDO": "Undo"
   },
   "Calories": "Calories",
   "Proteins": "Proteins",

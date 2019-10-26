@@ -46,6 +46,10 @@ export class UserConfsComponent implements OnInit {
     });
   }
 
+  undoChanges() {
+    this.refreshConfs();
+  }
+
   banCategory() {
     if (this.bannedCategories.indexOf(this.selectedCategory) === -1) {
       this.bannedCategories.push(this.selectedCategory);
@@ -64,13 +68,7 @@ export class UserConfsComponent implements OnInit {
   }
 
   removeMeal(meal: Meal) {
-    if (meal.id) {
-      this.userService.deleteMeal(meal.id).subscribe(data => {
-        this.userConf.meals = this.userConf.meals.filter(m => m !== meal);
-      });
-    } else {
-      this.userConf.meals = this.userConf.meals.filter(m => m !== meal);
-    }
+    this.userConf.meals = this.userConf.meals.filter(m => m !== meal);
   }
 
 }

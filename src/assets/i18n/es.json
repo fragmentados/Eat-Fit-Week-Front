@@ -134,7 +134,8 @@
     "LAST_NAME": "Apellidos",
     "INGREDIENT_CREATED": "Ingrediente creado con éxito.",
     "TEMPLATE_SAVED": "Plantilla guardada con éxito",
-    "MENU_FILLED": "Menú Rellenado desde Plantilla"
+    "MENU_FILLED": "Menú Rellenado desde Plantilla",
+    "UNDO": "Deshacer"
   },
   "Calories": "Calorías",
   "Proteins": "Proteinas",
