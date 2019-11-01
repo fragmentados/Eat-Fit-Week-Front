@@ -64,8 +64,9 @@ export class UserService {
     return this.http.delete(this.userUrl + '/meals/' + mealId);
   }
 
-  public createUser(user: User) {
-    return this.http.post<User>(this.userUrl, user);
+  public createUser(user: User, defaultData: boolean) {
+    const params = new HttpParams().set('defaultData', defaultData.toString());
+    return this.http.post<User>(this.userUrl, user, {params: params});
   }
 
   public login(login: Login) {

@@ -19,7 +19,11 @@
   <div class="form-group">
       <label for="password">{{ 'COMMON.PASSWORD' | translate }}:</label>
       <input [(ngModel)]="user.password" type="password" placeholder="{{ 'COMMON.PASSWORD' | translate }}" name="password" class="form-control" id="password">
-    </div>
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="loadDefaultData" #UserDefaultData="ngModel" name="UserDefaultData" type="checkbox">
+    <label style="text-align: center;margin:10px">{{ 'ADD_USER.DEFAULT_DATA' | translate}} </label>
+  </div>
 
   <button class="btn btn-success" (click)="createUser()">{{ 'COMMON.CREATE' | translate }}</button>
 </form>

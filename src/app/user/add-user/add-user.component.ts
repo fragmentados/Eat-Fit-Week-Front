@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { User } from '../../models/user/user.model';
 import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { DEFAULT_LANG } from '../../models/service';
 
 @Component({
   selector: 'app-add-user',
@@ -12,11 +14,14 @@ import { Router } from '@angular/router';
 export class AddUserComponent {
 
   user: User = new User();
+  loadDefaultData = false;
 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private translate: TranslateService, private router: Router, private userService: UserService) {
+    this.translate.setDefaultLang(DEFAULT_LANG);
+  }
 
   createUser(): void {
-    this.userService.createUser(this.user)
+    this.userService.createUser(this.user, this.loadDefaultData)
         .subscribe( data => {
           if (data) {
             alert('User created successfully.');

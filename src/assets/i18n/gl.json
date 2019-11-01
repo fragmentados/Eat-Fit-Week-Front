@@ -137,6 +137,9 @@
     "MENU_FILLED": "Menú enchido dende plantilla",
     "UNDO": "Desfacer"
   },
+  "ADD_USER": {
+    "DEFAULT_DATA": "Cargar ingredientes e pratos de exemplo"
+  },
   "Calories": "Calorías",
   "Proteins": "Proteínas",
   "Fats": "Graxas",

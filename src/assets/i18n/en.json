@@ -137,6 +137,9 @@
     "MENU_FILLED": "Menu Filled From Template",
     "UNDO": "Undo"
   },
+  "ADD_USER": {
+    "DEFAULT_DATA": "Load sample ingredients and dishes"
+  },
   "Calories": "Calories",
   "Proteins": "Proteins",
   "Fats": "Fats",
