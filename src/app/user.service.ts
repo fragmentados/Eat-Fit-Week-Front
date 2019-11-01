@@ -11,7 +11,13 @@ import { FacebookService, InitParams, LoginResponse } from 'ngx-facebook';
 
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders(
+    {
+      'Content-Type': 'application/json',
+      'rejectUnauthorized': 'false'
+    }
+  ),
+  rejectUnauthorized: false
 };
 
 @Injectable({ providedIn: 'root' })
@@ -37,41 +43,44 @@ export class UserService {
   }
 
   public getUser(userId: number) {
-    return this.http.get<User>(this.userUrl + '/' + userId);
+    return this.http.get<User>(this.userUrl + '/' + userId, httpOptions);
   }
 
   public getUsers() {
-    return this.http.get<User[]>(this.userUrl);
+    return this.http.get<User[]>(this.userUrl, httpOptions);
   }
 
   public getUserConfs(userId: number) {
-    return this.http.get<UserConfs>(this.userUrl + '/' + userId + '/conf');
+    return this.http.get<UserConfs>(this.userUrl + '/' + userId + '/conf', httpOptions);
   }
 
   public getUserMeals(userId: number) {
-    return this.http.get<Meal[]>(this.userUrl + '/' + userId + '/meals');
+    return this.http.get<Meal[]>(this.userUrl + '/' + userId + '/meals', httpOptions);
   }
 
   public updateUserConfs(userId: number, userConf: UserConfs) {
-    return this.http.post(this.userUrl + '/' + userId + '/conf', userConf);
+    return this.http.post(this.userUrl + '/' + userId + '/conf', userConf, httpOptions);
   }
 
   public deleteUser(user: User) {
-    return this.http.delete(this.userUrl + '/' + user.id);
+    return this.http.delete(this.userUrl + '/' + user.id, httpOptions);
   }
 
   public deleteMeal(mealId: number) {
-    return this.http.delete(this.userUrl + '/meals/' + mealId);
+    return this.http.delete(this.userUrl + '/meals/' + mealId, httpOptions);
   }
 
   public createUser(user: User, defaultData: boolean) {
-    const params = new HttpParams().set('defaultData', defaultData.toString());
-    return this.http.post<User>(this.userUrl, user, {params: params});
+    const createUserOptions = {
+      headers: httpOptions.headers,
+      params: new HttpParams().set('defaultData', defaultData.toString())
+    };
+    return this.http.post<User>(this.userUrl, user, createUserOptions);
   }
 
   public login(login: Login) {
     this.currentUserSubject.next(new User());
-    return this.http.post<User>(this.userUrl + '/login', login)
+    return this.http.post<User>(this.userUrl + '/login', login, httpOptions)
       .pipe(map(user => {
         if (user && user.id) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
