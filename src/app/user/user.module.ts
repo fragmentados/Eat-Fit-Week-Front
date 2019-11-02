@@ -31,6 +31,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     UserRoutingModule
   ],
   exports: [UserComponent, AddUserComponent],
-  providers: [UserService, IngredientService, FacebookService]
+  providers: [IngredientService, FacebookService]
 })
 export class UserModule { }

@@ -28,6 +28,6 @@ import { HttpClient } from '@angular/common/http';
     })
   ],
   exports: [IngredientComponent],
-  providers: [IngredientService, UserService]
+  providers: [IngredientService]
 })
 export class IngredientModule { }

@@ -12,10 +12,12 @@ import { UserService } from './user.service';
 import { FacebookModule } from 'ngx-facebook';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppHeaderComponent
   ],
   imports: [
     FacebookModule.forRoot(),

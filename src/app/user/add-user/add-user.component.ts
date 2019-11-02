@@ -24,7 +24,7 @@ export class AddUserComponent {
     this.userService.createUser(this.user, this.loadDefaultData)
         .subscribe( data => {
           if (data) {
-            alert('User created successfully.');
+            this.translate.get('ADD_USER.USER_ADDED').subscribe(trans => alert(trans));
             this.router.navigate(['/users/login']);
           }
         });

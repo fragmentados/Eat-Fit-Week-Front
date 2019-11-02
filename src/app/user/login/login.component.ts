@@ -4,12 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { Login } from '../../models/user/login.model';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { FacebookService, InitParams, LoginResponse } from 'ngx-facebook';
+import { LoginResponse } from 'ngx-facebook';
 import { TranslateService } from '@ngx-translate/core';
 
 // imports above
 declare var window: any;
-declare var FB: any;
 
 @Component({
   selector: 'app-login',
@@ -52,8 +51,6 @@ export class LoginComponent implements OnInit {
       },
       error => {
         alert('Error');
-        // this.error = error;
-        // this.loading = false;
       }
     );
   }

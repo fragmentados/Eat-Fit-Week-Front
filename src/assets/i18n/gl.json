@@ -138,7 +138,8 @@
     "UNDO": "Desfacer"
   },
   "ADD_USER": {
-    "DEFAULT_DATA": "Cargar ingredientes e pratos de exemplo"
+    "DEFAULT_DATA": "Cargar ingredientes e pratos de exemplo",
+    "USER_ADDED": "Usuario creado con éxito."
   },
   "Calories": "Calorías",
   "Proteins": "Proteínas",

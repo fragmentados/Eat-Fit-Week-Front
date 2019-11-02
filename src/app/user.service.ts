@@ -22,7 +22,7 @@ const httpOptions = {
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private currentUserSubject: BehaviorSubject<User>;
+  public currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   private userUrl = BACKEND_URL + 'users';
 
@@ -79,7 +79,6 @@ export class UserService {
   }
 
   public login(login: Login) {
-    this.currentUserSubject.next(new User());
     return this.http.post<User>(this.userUrl + '/login', login, httpOptions)
       .pipe(map(user => {
         if (user && user.id) {
@@ -87,7 +86,6 @@ export class UserService {
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.notifyUserChange(user);
         }
-
         return user;
     }));
   }

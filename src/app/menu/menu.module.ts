@@ -49,6 +49,6 @@ registerLocaleData(localeGl);
     MenuSaveTemplateComponent,
     MenuSelectTemplateComponent
   ],
-  providers: [MenuService, MenuTemplateService, UserService]
+  providers: [MenuService, MenuTemplateService]
 })
 export class MenuModule { }

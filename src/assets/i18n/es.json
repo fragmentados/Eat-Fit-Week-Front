@@ -138,7 +138,8 @@
     "UNDO": "Deshacer"
   },
   "ADD_USER": {
-    "DEFAULT_DATA": "Cargar ingredientes y platos de ejemplo"
+    "DEFAULT_DATA": "Cargar ingredientes y platos de ejemplo",
+    "USER_ADDED": "Usuario registrado con éxito"
   },
   "Calories": "Calorías",
   "Proteins": "Proteinas",

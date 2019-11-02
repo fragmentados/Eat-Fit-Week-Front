@@ -138,7 +138,8 @@
     "UNDO": "Undo"
   },
   "ADD_USER": {
-    "DEFAULT_DATA": "Load sample ingredients and dishes"
+    "DEFAULT_DATA": "Load sample ingredients and dishes",
+    "USER_ADDED": "User created successfully"
   },
   "Calories": "Calories",
   "Proteins": "Proteins",
