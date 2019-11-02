@@ -7,7 +7,7 @@ import { User } from '../../models/user/user.model';
 import { DishRestService } from '../dishRest.service';
 import { IngredientService } from '../../ingredient/ingredient.service';
 import { UserService } from '../../user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Meal } from '../../models/dish/meal.model';
 import { DishService } from '../dish.service';
 import { IngredientNameAndQuantity } from '../../models/ingredient/ingredientNameAndQuantity.model';
@@ -32,7 +32,7 @@ export class UpdateDishComponent implements OnInit {
   selectedMeals: boolean[] = [];
   statsTitle = 'Dish Stats';
 
-  constructor(private translate: TranslateService, private route: ActivatedRoute, private dishService: DishService,
+  constructor(private translate: TranslateService, private router: Router, private route: ActivatedRoute, private dishService: DishService,
     private dishRestService: DishRestService, private ingredientService: IngredientService, private userService: UserService) {
     this.translate.setDefaultLang(DEFAULT_LANG);
     this.currentUser = this.userService.currentUserValue;
@@ -95,6 +95,7 @@ export class UpdateDishComponent implements OnInit {
         .subscribe( data => {
           if (data.errorCode === OK_CODE) {
             alert('Dish ' + this.dish.name + ' updated successfully.');
+            this.router.navigate(['/dishes']);
           } else {
             alert(data.message);
           }
