@@ -49,6 +49,11 @@
       <label class="margin-left-label"> / 100 {{ 'COMMON.GRAMS' | translate }}</label>
     </div>
   </div>
+  <div class="horizontal-div">
+    <input [(ngModel)]="alsoAddDish" #AlsoAddDish="ngModel" name="AlsoAddDish" type="checkbox">
+    <label style="text-align: center;margin:10px">{{ 'ADD_INGREDIENT.ALSO_ADD_DISH' | translate }} </label>
+    <input *ngIf="alsoAddDish" class="form-control ingredient-select-element" [(ngModel)]="ingredientQuantity" type="number" placeholder="0" name="Quantity" id="Quantity">
+  </div>
   <div *ngIf="categorySelectedBanned">
       <label><font color="red">{{ 'ADD_INGREDIENT.BANNED_CATEGORY_INGREDIENT_MESSAGE' | translate }}!!!</font></label>
   </div>

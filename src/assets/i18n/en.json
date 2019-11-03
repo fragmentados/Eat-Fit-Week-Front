@@ -18,7 +18,8 @@
     "ADD_INGREDIENT": "Add Ingredient",
     "ESTIMATE_STATS": "Estimate Stats",
     "CATEGORIES": "Categories",
-    "BANNED_CATEGORY_INGREDIENT_MESSAGE": "The Food Category you have selected is currently banned by you"
+    "BANNED_CATEGORY_INGREDIENT_MESSAGE": "The Food Category you have selected is currently banned by you",
+    "ALSO_ADD_DISH": "Create also a dish with just this ingredient"
   },
   "LIST_INGREDIENTS": {
     "INGREDIENT_DETAILS": "Ingredient Details",

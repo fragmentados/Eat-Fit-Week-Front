@@ -18,7 +18,8 @@
     "ADD_INGREDIENT": "Crear Ingrediente",
     "ESTIMATE_STATS": "Estimar Estadísticas",
     "CATEGORIES": "Categorías",
-    "BANNED_CATEGORY_INGREDIENT_MESSAGE": "La Categoría Alimenticia que has seleccionado está prohibida por ti"
+    "BANNED_CATEGORY_INGREDIENT_MESSAGE": "La Categoría Alimenticia que has seleccionado está prohibida por ti",
+    "ALSO_ADD_DISH": "Crear también un plato con sólo este ingrediente"
   },
   "LIST_INGREDIENTS": {
     "INGREDIENT_DETAILS": "Detalles de Ingredientes",
