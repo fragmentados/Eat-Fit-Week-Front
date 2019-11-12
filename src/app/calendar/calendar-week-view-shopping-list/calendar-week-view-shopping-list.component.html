@@ -15,6 +15,7 @@
         <td><b>{{item.ingredientName}}</b></td>
         <td><b>{{item.units}}</b></td>
         <td><b>{{item.quantity}}</b></td>
+        <td><button class="btn btn-danger" (click)="removeRow(item)">{{ 'SHOPPING_LIST.ALREADY_GOTTEN' | translate }}</button></td>
       </tr>
       </tbody>
     </table>

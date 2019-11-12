@@ -1,3 +1,4 @@
+import { ShoppingItem } from './../../models/menu/shoppingList/shoppingItem.model';
 import { DEFAULT_LANG } from './../../models/service';
 import { ShoppingList } from './../../models/menu/shoppingList/shoppingList.model';
 import { Component, OnInit, Inject } from '@angular/core';
@@ -38,6 +39,10 @@ export class CalendarWeekViewShoppingListComponent implements OnInit {
 
 
       return true;
+  }
+
+  removeRow(item: ShoppingItem) {
+    this.data.items = this.data.items.filter(i => i !== item);
   }
 
   onOkClick(): void {

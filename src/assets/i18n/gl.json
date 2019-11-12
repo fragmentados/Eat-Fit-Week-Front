@@ -62,6 +62,9 @@
     "RANDOM_DAYS": "Días Aleatorios",
     "VALID_DAYS": "Días Válidos"
   },
+  "SHOPPING_LIST": {
+    "ALREADY_GOTTEN" : "Xa o teño!"
+  },
   "SAVE_TEMPLATE": {
     "TITLE": "Gardar menú actual como Plantilla",
     "TEMPLATE_NAME": "Nome de Plantilla"

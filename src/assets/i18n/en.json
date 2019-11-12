@@ -62,6 +62,9 @@
     "RANDOM_DAYS": "Random Days",
     "VALID_DAYS": "Valid Days"
   },
+  "SHOPPING_LIST": {
+    "ALREADY_GOTTEN" : "I already have it!"
+  },
   "SAVE_TEMPLATE": {
     "TITLE": "Save currrent Menu As Template",
     "TEMPLATE_NAME": "Template Name"
