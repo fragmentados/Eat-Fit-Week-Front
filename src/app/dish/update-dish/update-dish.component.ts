@@ -47,7 +47,7 @@ export class UpdateDishComponent implements OnInit {
           this.dishStats, this.currentUser, this.allowedMeals, this.selectedMeals);
       });
     });
-    this.ingredientService.getUserIngredients(this.currentUser.id).subscribe(data => this.ingredients = data);
+    this.ingredientService.getUserIngredients(this.currentUser.id, true).subscribe(data => this.ingredients = data);
   }
 
   removeIngredient(ingredient: IngredientNameAndQuantity) {

@@ -17,7 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class IngredientComponent implements OnInit {
 
-  ingredients: Ingredient[];
+  ingredientMap: Map<String, Ingredient[]>;
   bannedCategories: FoodCategory[];
   currentUser: User;
   warningText;
@@ -34,9 +34,9 @@ export class IngredientComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ingredientService.getUserIngredients(this.currentUser.id)
+    this.ingredientService.getUserIngredientsAsMap(this.currentUser.id)
       .subscribe( data => {
-        this.ingredients = data;
+        this.ingredientMap = data;
       });
       this.userService.getUserConfs(this.currentUser.id).subscribe(data => {
         this.bannedCategories = data.bannedCategories;
@@ -47,15 +47,16 @@ export class IngredientComponent implements OnInit {
     this.router.navigate(['/ingredients/updateIngredient', ingredient.id]);
   }
 
-  deleteIngredient(ingredient: Ingredient): void {
+  deleteIngredient(key: string, ingredient: Ingredient): void {
     this.ingredientService.deleteIngredient(ingredient)
       .subscribe( data => {
-        this.ingredients = this.ingredients.filter(u => u !== ingredient);
+        this.ingredientMap.set(key, this.ingredientMap.get(key).filter(u => u !== ingredient));
       });
   }
 
   isBanned(ingredient: Ingredient) {
-    return this.bannedCategories.filter(bc => bc.id === ingredient.category.id).length > 0;
+    // return this.bannedCategories.filter(bc => bc.id === ingredient.category.id).length > 0;
+    return false;
   }
 
   ingredientCalories(ingredient: Ingredient) {

@@ -12,9 +12,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class CalendarWeekViewShoppingListComponent implements OnInit {
 
+  priceSummed;
+
   constructor(private translate: TranslateService, public dialogRef: MatDialogRef<CalendarWeekViewShoppingListComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ShoppingList) {
       this.translate.setDefaultLang(DEFAULT_LANG);
+      this.priceSummed = this.sumPrice(data);
     }
 
   ngOnInit() {
@@ -41,8 +44,19 @@ export class CalendarWeekViewShoppingListComponent implements OnInit {
       return true;
   }
 
+  sumPrice(data: ShoppingList) {
+    return data.items.map(i => i.price).reduce((a, b) => a + b).toFixed(2);
+  }
+
   removeRow(item: ShoppingItem) {
-    this.data.items = this.data.items.filter(i => i !== item);
+    if (item) {
+      if (parseFloat(this.priceSummed) - parseFloat(item.price.toFixed(2)) <= 0) {
+        this.priceSummed = 0;
+      } else {
+        this.priceSummed = (parseFloat(this.priceSummed) -  parseFloat(item.price.toFixed(2))).toFixed(2);
+      }
+      this.data.items = this.data.items.filter(i => i !== item);
+    }
   }
 
   onOkClick(): void {

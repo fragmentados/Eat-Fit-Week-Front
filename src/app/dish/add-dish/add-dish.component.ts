@@ -39,7 +39,7 @@ export class AddDishComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ingredientService.getUserIngredients(this.currentUser.id).subscribe(data => this.ingredients = data);
+    this.ingredientService.getUserIngredients(this.currentUser.id, true).subscribe(data => this.ingredients = data);
     this.userService.getUserMeals(this.currentUser.id).subscribe(data => {
       this.allowedMeals = data;
       this.allowedMeals.forEach(m => {

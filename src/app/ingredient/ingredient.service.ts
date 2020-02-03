@@ -15,9 +15,14 @@ export class IngredientService {
 
   private ingredientUrl = BACKEND_URL + 'ingredients';
 
-  public getUserIngredients(userId: number) {
-    const params = new HttpParams().set('userId', userId.toString());
+  public getUserIngredients(userId: number, sortedByName: boolean) {
+    const params = new HttpParams().set('userId', userId.toString()).set('sortedByName', sortedByName.toString());
     return this.http.get<Ingredient[]>(this.ingredientUrl, { params: params });
+  }
+
+  public getUserIngredientsAsMap(userId: number) {
+    const params = new HttpParams().set('userId', userId.toString());
+    return this.http.get<Map<String, Ingredient[]>>(this.ingredientUrl + '/map', { params: params });
   }
 
   public getIngredient(ingredientId: number) {

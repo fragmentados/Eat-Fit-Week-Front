@@ -1,6 +1,6 @@
 <div>
   <h2 mat-dialog-title>{{ 'CALENDAR.SHOPPING_LIST' | translate }}</h2>
-  <div id="shopping-list dialog">
+  <div mat-dialog-content id="shopping-list dialog">
     <hr>
     <table class="table table-striped">
       <thead>
@@ -20,8 +20,8 @@
       </tbody>
     </table>
     <hr>
-    <div>
-      <label>{{ 'CALENDAR.MERCADONA' | translate }}: {{data.priceEstimation.price}} €</label>
+    <div *ngIf="priceSummed">
+      <label>{{ 'CALENDAR.MERCADONA' | translate }}: {{priceSummed}} €</label>
     </div>
   </div>
   <div mat-dialog-actions class="modal-footer">
